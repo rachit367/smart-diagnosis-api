@@ -48,7 +48,7 @@ Clinical Guidelines:
         path: 'conditions',
         select: 'condition probability next_steps'
     });
-    return data;
+    return data.conditions;
 }
 
 async function getHistory() {
