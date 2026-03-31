@@ -5,6 +5,7 @@
 - **Database:** MongoDB Atlas (via Mongoose)
 - **AI Provider:** OpenRouter API (free model)
 - **AI Model:** `nvidia/nemotron-3-super-120b-a12b:free`
+- **CORS:** Set to `*` (all origins allowed) so that the API can be tested easily from any frontend or tool without running into cross-origin issues.
 
 ---
 
@@ -65,20 +66,9 @@ OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free
 
 ### 4. Start the server
 
-```bash
+
 node server.js
-```
 
-You should see:
-
-```
-MongoDB connected
-server started
-```
-
-The API will be running at `http://localhost:3000`
-
----
 
 ## API Endpoints
 
@@ -205,9 +195,3 @@ smart-diagnosis-API/
 ```
 
 ---
-
-## Credits
-
-- AI prompt crafted with the help of **ChatGPT**
-- AI responses powered by **OpenRouter** (free tier)
-- AI model used: **nvidia/nemotron-3-super-120b-a12b:free**
