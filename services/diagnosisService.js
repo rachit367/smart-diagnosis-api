@@ -52,7 +52,10 @@ Clinical Guidelines:
 }
 
 async function getHistory() {
-    const records = await Diagnosis.find().sort({ createdAt: -1 }).populate('conditions')
+    const records = await Diagnosis.find()
+    .sort({ createdAt: -1 })
+    .populate({path:'conditions',select:'condition probability next_steps'})
+    .select('_id createdAt symptoms')
     .lean()
     return records
 }
