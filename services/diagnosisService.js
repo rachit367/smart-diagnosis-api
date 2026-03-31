@@ -44,7 +44,11 @@ Clinical Guidelines:
     const conditionIds = savedConditions.map(c => c._id)
 
     const record = await Diagnosis.create({ symptoms, conditions: conditionIds })
-    return await record.populate('conditions')
+    const data = await record.populate({
+        path: 'conditions',
+        select: 'condition probability next_steps'
+    });
+    return data;
 }
 
 async function getHistory() {
